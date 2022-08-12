@@ -66,7 +66,13 @@ const loginUser = async (req, res) => {
 
 // Get Currently Login User
 const getUser = async (req, res) => {
-  res.status(200).json({ msg: "User Getting" });
+  const { _id, name, email } = await USER.findById(req.user.id);
+
+  res.status(200).json({
+    id: _id,
+    name,
+    email,
+  });
 };
 
 // Generate Token

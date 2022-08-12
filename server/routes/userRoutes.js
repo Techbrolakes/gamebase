@@ -4,6 +4,7 @@ const {
   loginUser,
   getUser,
 } = require("../controllers/userControllers");
+const { protect } = require("../middleware/authMiddleware");
 
 // ROUTES FOR USER REGISTRATION
 router.post("/", registerUser);
@@ -12,6 +13,6 @@ router.post("/", registerUser);
 router.post("/login", loginUser);
 
 // ROUTE FOR SINGLE USER
-router.get("/me", getUser);
+router.get("/me", protect, getUser);
 
 module.exports = router;

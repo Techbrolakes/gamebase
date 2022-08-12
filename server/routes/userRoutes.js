@@ -6,7 +6,7 @@ const {
 } = require("../controllers/userControllers");
 
 // ROUTES FOR USER REGISTRATION
-router.post("/register", registerUser);
+router.post("/", registerUser);
 
 // ROUTE FOR USER LOGIN
 router.post("/login", loginUser);

@@ -9,7 +9,7 @@ const initialState = {
   message: "",
 };
 
-// create new goal
+// Create new goal
 export const createGoal = createAsyncThunk(
   "goals/create",
   async (goalData, thunkAPI) => {
